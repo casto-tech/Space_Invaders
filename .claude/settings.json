@@ -1,0 +1,12 @@
+{
+  "model": "claude-opus-4-7",
+  "permissions": {
+    "allow": [
+      "Bash(python *)",
+      "Bash(python3 *)",
+      "Bash(python -m unittest*)",
+      "Bash(python3 -m unittest*)",
+      "Bash(python -m turtle_invaders*)"
+    ]
+  }
+}
