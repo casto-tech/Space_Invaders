@@ -3,7 +3,7 @@ from . import config
 
 
 class Laser:
-    def __init__(self, x, y, direction=1):
+    def __init__(self, x: float, y: float, direction: int = 1) -> None:
         """direction: 1 = up (player), -1 = down (alien)"""
         self.direction = direction
         self._t = turtle.Turtle()
@@ -19,27 +19,27 @@ class Laser:
         self.alive = True
 
     @property
-    def x(self):
+    def x(self) -> float:
         return self._t.xcor()
 
     @property
-    def y(self):
+    def y(self) -> float:
         return self._t.ycor()
 
-    def draw(self):
+    def draw(self) -> None:
         self._t.clear()
         self._t.pendown()
         self._t.forward(config.LASER_LENGTH)
         self._t.forward(-config.LASER_LENGTH)
         self._t.penup()
 
-    def update(self, dt):
+    def update(self, dt: float) -> None:
         self._t.forward(config.LASER_SPEED * dt)
 
-    def distance(self, x, y):
+    def distance(self, x: float, y: float) -> float:
         return self._t.distance(x, y)
 
-    def destroy(self):
+    def destroy(self) -> None:
         self._t.clear()
         self._t.hideturtle()
         self.alive = False

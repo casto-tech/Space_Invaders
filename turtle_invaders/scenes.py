@@ -1,7 +1,7 @@
 import turtle
 
 
-def _make_overlay():
+def _make_overlay() -> turtle.Turtle:
     t = turtle.Turtle()
     t.penup()
     t.hideturtle()
@@ -9,7 +9,7 @@ def _make_overlay():
     return t
 
 
-def draw_start():
+def draw_start() -> turtle.Turtle:
     t = _make_overlay()
     t.setposition(0, 60)
     t.write("SPACE INVADERS", font=("Courier", 36, "bold"), align="center")
@@ -24,7 +24,7 @@ def draw_start():
     return t
 
 
-def draw_pause():
+def draw_pause() -> turtle.Turtle:
     t = _make_overlay()
     t.setposition(0, 20)
     t.write("PAUSED", font=("Courier", 40, "bold"), align="center")
@@ -33,7 +33,7 @@ def draw_pause():
     return t
 
 
-def draw_game_over(score, high_score):
+def draw_game_over(score: int, high_score: int) -> turtle.Turtle:
     t = _make_overlay()
     t.setposition(0, 60)
     t.write("GAME OVER", font=("Courier", 40, "bold"), align="center")
@@ -50,7 +50,7 @@ def draw_game_over(score, high_score):
     return t
 
 
-def clear_overlay(overlay_turtle):
+def clear_overlay(overlay_turtle: turtle.Turtle | None) -> None:
     if overlay_turtle is not None:
         overlay_turtle.clear()
         overlay_turtle.hideturtle()
